@@ -4,7 +4,7 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Solicitação de Vaga</title>
+    <title>Meus arquivos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -52,29 +52,33 @@
 						<li>
 							<a href="home-page.html">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i> 
+									<i class="fa  fa-home fa-lg"></i> 
 								</span>
 								<span class="text">
-									Paginal inicial
+									Página inicial
 								</span>
 								<span class="menu-hover"></span>
 							</a>
                         </li>
-						<li>
+						<li class="openable">
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i> 
+									<i class="fa fa-folder fa-lg"></i> 
 								</span>
 								<span class="text">
 									Meus arquivos
 								</span>
 								<span class="menu-hover"></span>
 							</a>
+                            <ul class="submenu">
+								<li><a href="meus-arquivos.html"><span class="submenu-label">Consultar meus arquivos</span></a></li>
+                                <li><a href="enviar-arquivo.html"><span class="submenu-label">Enviar novo arquivo</span></a></li>
+							</ul>
 						</li>
 						<li>
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-picture-o fa-lg"></i> 
+									<i class="fa fa-search fa-lg"></i> 
 								</span>
 								<span class="text">
 									Buscar arquivos
@@ -85,7 +89,7 @@
 						<li>
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-envelope fa-lg"></i> 
+									<i class="fa fa-cog fa-lg"></i> 
 								</span>
 								<span class="text">
 									Configurações
@@ -96,7 +100,7 @@
                         <li>
 							<a href="login-transcrip.html">
 								<span class="menu-icon">
-									<i class="fa fa-envelope fa-lg"></i> 
+									<i class="fa fa-power-off fa-lg"></i> 
 								</span>
 								<span class="text">
 									Sair
@@ -110,64 +114,9 @@
 		</aside>
 
 		<div id="main-container">
-			<div id="breadcrumb">
-				<ul class="breadcrumb">
-					 <li><i class="fa fa-home"></i><a href="index.html"> Home</a></li>
-					 <li>Form</li>	 
-					 <li class="active">Form Element</li>	 
-				</ul>
-			</div><!--breadcrumb-->
             
-            <!-- /Modal -->
-            <div class="modal fade" id="formModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4>Modal with form</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control input-sm" placeholder="Email Address">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control input-sm" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                     <label class="label-checkbox">
-                                     <input type="checkbox" class="regular-checkbox" />
-                                     <span class="custom-checkbox"></span>
-                                         Remember me
-                                    </label>
-                                </div>
-                                <div class="form-group text-right">
-                                    <a href="#" class="btn btn-success">Sign in</a>
-                                    <a href="#" class="btn btn-success">Sign up</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
         </div><!-- /wrapper -->
-
-        <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
-
-        <!-- Logout confirmation -->
-        <div class="custom-popup width-100" id="logoutConfirm">
-            <div class="padding-md">
-                <h4 class="m-top-none"> Do you want to logout?</h4>
-            </div>
-
-            <div class="text-center">
-                <a class="btn btn-success m-right-sm" href="login.html">Logout</a>
-                <a class="btn btn-danger logoutConfirm_close">Cancel</a>
-            </div>
-        </div>
-			
+        
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
