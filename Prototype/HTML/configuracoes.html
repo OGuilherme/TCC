@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Configurações</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Pace -->
+        <link href="css/pace.css" rel="stylesheet">
+
+        <!-- Chosen -->
+        <link href="css/chosen/chosen.min.css" rel="stylesheet"/>
+
+        <!-- Datepicker -->
+        <link href="css/datepicker.css" rel="stylesheet"/>
+
+        <!-- Timepicker -->
+        <link href="css/bootstrap-timepicker.css" rel="stylesheet"/>
+
+        <!-- Slider -->
+        <link href="css/slider.css" rel="stylesheet"/>
+
+        <!-- Tag input -->
+        <link href="css/jquery.tagsinput.css" rel="stylesheet"/>
+
+        <!-- WYSIHTML5 -->
+        <link href="css/bootstrap-wysihtml5.css" rel="stylesheet"/>
+
+        <!-- Dropzone -->
+        <link href='css/dropzone/dropzone.css' rel="stylesheet"/>
+
+        <!-- Perfect -->
+        <link href="css/app.min.css" rel="stylesheet">
+        <link href="css/app-skin.css" rel="stylesheet">
+
+    </head>
+    <body>
+                <!-- Overlay Div -->
+        <div id="overlay" class="transparent"></div>
+
+        <div id="wrapper" class="preload">
+        <div id="top-nav" class="skin-6 fixed">
+                <div class="brand">
+                    <a href="dashboard.html"><img src="img/logo.png" class="logo"></a>
+                </div><!-- /brand -->
+                <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!-- /top-nav-->
+        <aside class="fixed skin-6">
+			<div class="sidebar-inner scrollable-sidebar">
+				<div class="size-toggle">
+                     <a class="btn btn-sm" id="sizeToggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+					<a class="btn btn-sm pull-right logoutConfirm_open"  href="#logoutConfirm">
+						<i class="fa fa-power-off"></i>
+					</a>
+				</div><!-- /size-toggle -->
+				<div class="user-block clearfix">
+					<img src="img/user.jpg" alt="User Avatar">
+					<div class="detail">
+						<strong>Guilherme</strong>
+						<ul class="list-inline">
+							<li><a href="profile.html">Perfil</a></li>
+						</ul>
+					</div>
+				</div><!-- /user-block -->
+				<div class="main-menu">
+					<ul>
+						<li>
+							<a href="home-page.html">
+								<span class="menu-icon">
+									<i class="fa  fa-home fa-lg"></i>
+								</span>
+								<span class="text">
+									Página inicial
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+                        </li>
+						<li class="openable">
+							<a href="#">
+								<span class="menu-icon">
+									<i class="fa fa-folder fa-lg"></i>
+								</span>
+								<span class="text">
+									Meus arquivos
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+                            <ul class="submenu">
+								<li><a href="meus-arquivos.html"><span class="submenu-label">Consultar meus arquivos</span></a></li>
+                                <li><a href="enviar-arquivo.html"><span class="submenu-label">Enviar novo arquivo</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="buscar-usuarios.html">
+								<span class="menu-icon">
+									<i class="fa fa-search fa-lg"></i>
+								</span>
+								<span class="text">
+									Buscar usuarios
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+						<li>
+							<a href="configuracoes.html">
+								<span class="menu-icon">
+									<i class="fa fa-cog fa-lg"></i>
+								</span>
+								<span class="text">
+									Configurações
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+                        <li>
+							<a href="login-transcrip.html">
+								<span class="menu-icon">
+									<i class="fa fa-power-off fa-lg"></i>
+								</span>
+								<span class="text">
+									Sair
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+					</ul>
+				</div><!-- /main-menu -->
+			</div><!-- /sidebar-inner -->
+		</aside>
+
+        <div id="main-container">
+            <div id="breadcrumb">
+                    <ul class="breadcrumb">
+                    </ul>
+            </div><!--breadcrumb-->
+            <!--corpo -->
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Configurações
+                    </div>
+                    <!--<form class="form-inline">-->
+                    <div class="panel-body">
+                        <form class="form-border">
+                                <div class="col-xs-6">
+                                    <label class="control-label">Nome do usuário</label>
+                                    <input class="form-control" type="text" id="nome" name="nome">
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="control-label">Usuário</label>
+                                    <input class="form-control" type="text" id="nome" name="nome">
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="control-label">E-mail</label>
+                                    <input class="form-control" type="text" id="nome" name="nome">
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="control-label">Senha</label>
+                                    <input class="form-control" type="text" id="nome" name="nome">
+                                </div>
+                                <div class="pull-right row">
+                                <br>
+                                <button class="btn btn-md btn-success" type="button"> Salvar</button>
+                                <button class="btn btn-md btn-success" type="button"> Excluir conta</button>
+                              </div>
+                        </form>
+                    </div><!--</panel body>-->
+                </div>
+            </div><!--</container>-->
+        </div><!--</main container>-->
+        <!--corpo -->
+        </div>
+
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<!-- Jquery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+
+		<!-- Bootstrap -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Chosen -->
+		<script src='js/chosen.jquery.min.js'></script>
+
+		<!-- Mask-input -->
+		<script src='js/jquery.maskedinput.min.js'></script>
+
+		<!-- Datepicker -->
+		<script src='js/bootstrap-datepicker.min.js'></script>
+
+		<!-- Timepicker -->
+		<script src='js/bootstrap-timepicker.min.js'></script>
+
+		<!-- Slider -->
+		<script src='js/bootstrap-slider.min.js'></script>
+
+		<!-- Tag input -->
+		<script src='js/jquery.tagsinput.min.js'></script>
+
+		<!-- WYSIHTML5 -->
+		<script src='js/wysihtml5-0.3.0.min.js'></script>
+		<script src='js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+		<!-- Dropzone -->
+		<script src='js/dropzone.min.js'></script>
+
+		<!-- Modernizr -->
+		<script src='js/modernizr.min.js'></script>
+
+		<!-- Pace -->
+		<script src='js/pace.min.js'></script>
+
+		<!-- Popup Overlay -->
+		<script src='js/jquery.popupoverlay.min.js'></script>
+
+		<!-- Slimscroll -->
+		<script src='js/jquery.slimscroll.min.js'></script>
+
+		<!-- Cookie -->
+		<script src='js/jquery.cookie.min.js'></script>
+
+		<!-- Perfect -->
+		<script src="js/app/app_form.js"></script>
+		<script src="js/app/app.js"></script>
+
+		<!-- Custom -->
+		<script src="js/custom/solicitacaoVaga.js"></script>
+  </body>
+</html>
