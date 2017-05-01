@@ -45,8 +45,41 @@
 	
   </head>
   	<body>
-        <aside class="fixed">		
+                        <!-- Overlay Div -->
+        <div id="overlay" class="transparent"></div>
+        
+        <div id="wrapper" class="preload">
+        <div id="top-nav" class="skin-6 fixed">
+                <div class="brand">
+                    <a href="dashboard.html"><img src="img/logo.png" class="logo"></a>
+                </div><!-- /brand -->
+                <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!-- /top-nav-->
+        <aside class="fixed skin-6">
 			<div class="sidebar-inner scrollable-sidebar">
+				<div class="size-toggle">
+                     <a class="btn btn-sm" id="sizeToggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+					<a class="btn btn-sm pull-right logoutConfirm_open"  href="#logoutConfirm">
+						<i class="fa fa-power-off"></i>
+					</a>
+				</div><!-- /size-toggle -->	
+				<div class="user-block clearfix">
+					<img src="img/user.jpg" alt="User Avatar">
+					<div class="detail">
+						<strong>Guilherme</strong>
+						<ul class="list-inline">
+							<li><a href="profile.html">Perfil</a></li>
+						</ul>
+					</div>
+				</div><!-- /user-block -->
 				<div class="main-menu">
 					<ul>
 						<li>
@@ -76,18 +109,18 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">
+							<a href="buscar-usuarios.html">
 								<span class="menu-icon">
 									<i class="fa fa-search fa-lg"></i> 
 								</span>
 								<span class="text">
-									Buscar arquivos
+									Buscar usuarios
 								</span>
 								<span class="menu-hover"></span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="configuracoes.html">
 								<span class="menu-icon">
 									<i class="fa fa-cog fa-lg"></i> 
 								</span>
@@ -110,12 +143,16 @@
 						</li>
 					</ul>
 				</div><!-- /main-menu -->
-			</div><!-- /sidebar-inner scrollable-sidebar -->
+			</div><!-- /sidebar-inner -->
 		</aside>
-
 		<div id="main-container">
+            <div id="breadcrumb">
+                    <ul class="breadcrumb">
+                    </ul>
+            </div><!--breadcrumb-->
             
         </div><!-- /wrapper -->
+    </div>
         
 		<!-- Le javascript
 		================================================== -->

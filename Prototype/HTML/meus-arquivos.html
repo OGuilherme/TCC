@@ -43,14 +43,47 @@
 
     </head>
     <body>
-        <aside class="fixed">		
+                <!-- Overlay Div -->
+        <div id="overlay" class="transparent"></div>
+
+        <div id="wrapper" class="preload">
+        <div id="top-nav" class="skin-6 fixed">
+                <div class="brand">
+                    <a href="dashboard.html"><img src="img/logo.png" class="logo"></a>
+                </div><!-- /brand -->
+                <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!-- /top-nav-->
+        <aside class="fixed skin-6">
 			<div class="sidebar-inner scrollable-sidebar">
+				<div class="size-toggle">
+                     <a class="btn btn-sm" id="sizeToggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+					<a class="btn btn-sm pull-right logoutConfirm_open"  href="#logoutConfirm">
+						<i class="fa fa-power-off"></i>
+					</a>
+				</div><!-- /size-toggle -->
+				<div class="user-block clearfix">
+					<img src="img/user.jpg" alt="User Avatar">
+					<div class="detail">
+						<strong>Guilherme</strong>
+						<ul class="list-inline">
+							<li><a href="profile.html">Perfil</a></li>
+						</ul>
+					</div>
+				</div><!-- /user-block -->
 				<div class="main-menu">
 					<ul>
 						<li>
 							<a href="home-page.html">
 								<span class="menu-icon">
-									<i class="fa  fa-home fa-lg"></i> 
+									<i class="fa  fa-home fa-lg"></i>
 								</span>
 								<span class="text">
 									Página inicial
@@ -61,7 +94,7 @@
 						<li class="openable">
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-folder fa-lg"></i> 
+									<i class="fa fa-folder fa-lg"></i>
 								</span>
 								<span class="text">
 									Meus arquivos
@@ -74,20 +107,20 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">
+							<a href="buscar-usuarios.html">
 								<span class="menu-icon">
-									<i class="fa fa-search fa-lg"></i> 
+									<i class="fa fa-search fa-lg"></i>
 								</span>
 								<span class="text">
-									Buscar arquivos
+									Buscar usuarios
 								</span>
 								<span class="menu-hover"></span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="configuracoes.html">
 								<span class="menu-icon">
-									<i class="fa fa-cog fa-lg"></i> 
+									<i class="fa fa-cog fa-lg"></i>
 								</span>
 								<span class="text">
 									Configurações
@@ -98,7 +131,7 @@
                         <li>
 							<a href="login-transcrip.html">
 								<span class="menu-icon">
-									<i class="fa fa-power-off fa-lg"></i> 
+									<i class="fa fa-power-off fa-lg"></i>
 								</span>
 								<span class="text">
 									Sair
@@ -108,22 +141,8 @@
 						</li>
 					</ul>
 				</div><!-- /main-menu -->
-			</div><!-- /sidebar-inner scrollable-sidebar -->
+			</div><!-- /sidebar-inner -->
 		</aside>
-        <!-- Modal visualizar-->
-        <div class="modal fade" id="vaga-modal" data-target="#vaga-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Autorizar usuários</h4>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                </div><!-- /tab-content -->
-            </div>
-        </div><!-- Modal visualizar -->
-
         <!-- Modal delete -->
         <div class="modal fade" id="delete-modal" data-target="#delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
             <div class="modal-dialog" role="document">
@@ -132,12 +151,12 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title" id="modalLabel">Deletar arquivos</h4>
+                        <h4 class="modal-title" id="modalLabel">Excluir arquivos</h4>
                     </div>
-                    <div class="modal-body">Deseja realmente deletar este arquivo?</div>
+                    <div class="modal-body">Deseja realmente excluir este arquivo?</div>
                     <div class="modal-footer">
                         <a href="#">
-                            <button id="excluiVaga" type="button" class="btn btn-primary" data-dismiss="modal">Sim</button>
+                            <button id="excluirArquivo" type="button" class="btn btn-primary" data-dismiss="modal">Sim</button>
                         </a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
                     </div>
@@ -147,6 +166,10 @@
         <!-- /.modal delete-->
 
         <div id="main-container">
+            <div id="breadcrumb">
+                <ul class="breadcrumb">
+                </ul>
+            </div><!--breadcrumb-->
             <!--corpo -->
             <div class="container">
                 <div class="panel panel-default">
@@ -159,7 +182,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Arquivo</label>
-                                    <input type="text" class="form-control" id="usuario"data-required="true">
+                                    <input type="text" class="form-control" id="arquivo" data-required="true">
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -195,9 +218,11 @@
                                     <div class="btn-group">
                                         <button class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs fa-lg">&nbsp;</i> <span class="caret"></span></button>
                                         <ul class="dropdown-menu dropdown-menu-right slidedown">
-                                            <li><a href="#vaga-modal" data-toggle="modal"><i class="fa fa-eye"></i>Autorizar</a></li>
+                                            <li><a href="#autorizar-modal" data-toggle="modal"><i class="fa fa-eye"></i> Autorizar</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i>Deletar</a></li>
+                                            <li><a href="#"><i class="fa fa-arrow-circle-o-down"></i> Download</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i> Excluir</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
                                 </td>
@@ -210,9 +235,11 @@
                                     <div class="btn-group">
                                         <button class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs fa-lg">&nbsp;</i> <span class="caret"></span></button>
                                         <ul class="dropdown-menu dropdown-menu-right slidedown">
-                                            <li><a href="#vaga-modal" data-toggle="modal"><i class="fa fa-eye"></i>Autorizar</a></li>
+                                            <li><a href="#autorizar-modal" data-toggle="modal"><i class="fa fa-eye"></i> Autorizar</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i>Deletar</a></li>
+                                            <li><a href="#"><i class="fa fa-arrow-circle-o-down"></i> Download</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i> Excluir</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
                                 </td>
@@ -225,9 +252,11 @@
                                     <div class="btn-group">
                                         <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs fa-lg">&nbsp;</i> <span class="caret"></span></button>
                                         <ul class="dropdown-menu dropdown-menu-right slidedown">
-                                            <li><a href="#vaga-modal" data-toggle="modal"><i class="fa fa-eye"></i>Autorizar</a></li>
+                                            <li><a href="#autorizar-modal" data-toggle="modal"><i class="fa fa-eye"></i> Autorizar</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i>Deletar</a></li>
+                                            <li><a href="#"><i class="fa fa-arrow-circle-o-down"></i> Download</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#delete-modal" data-toggle="modal" ><i class="fa fa-times"></i> Excluir</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
                                 </td>
@@ -251,7 +280,8 @@
             </div><!--</container>-->
         </div><!--</main container>-->
         <!--corpo -->
-        
+        </div>
+
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
@@ -263,29 +293,29 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Chosen -->
-		<script src='js/chosen.jquery.min.js'></script>	
+		<script src='js/chosen.jquery.min.js'></script>
 
 		<!-- Mask-input -->
-		<script src='js/jquery.maskedinput.min.js'></script>	
+		<script src='js/jquery.maskedinput.min.js'></script>
 
 		<!-- Datepicker -->
-		<script src='js/bootstrap-datepicker.min.js'></script>	
+		<script src='js/bootstrap-datepicker.min.js'></script>
 
 		<!-- Timepicker -->
-		<script src='js/bootstrap-timepicker.min.js'></script>	
+		<script src='js/bootstrap-timepicker.min.js'></script>
 
 		<!-- Slider -->
-		<script src='js/bootstrap-slider.min.js'></script>	
+		<script src='js/bootstrap-slider.min.js'></script>
 
 		<!-- Tag input -->
-		<script src='js/jquery.tagsinput.min.js'></script>	
+		<script src='js/jquery.tagsinput.min.js'></script>
 
 		<!-- WYSIHTML5 -->
-		<script src='js/wysihtml5-0.3.0.min.js'></script>	
-		<script src='js/uncompressed/bootstrap-wysihtml5.js'></script>	
+		<script src='js/wysihtml5-0.3.0.min.js'></script>
+		<script src='js/uncompressed/bootstrap-wysihtml5.js'></script>
 
 		<!-- Dropzone -->
-		<script src='js/dropzone.min.js'></script>	
+		<script src='js/dropzone.min.js'></script>
 
 		<!-- Modernizr -->
 		<script src='js/modernizr.min.js'></script>
@@ -307,6 +337,6 @@
 		<script src="js/app/app.js"></script>
 
 		<!-- Custom -->
-		<script src="js/custom/solicitacaoVaga.js"></script>	
+		<script src="js/custom/solicitacaoVaga.js"></script>
   </body>
 </html>
