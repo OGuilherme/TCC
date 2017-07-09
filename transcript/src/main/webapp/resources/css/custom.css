@@ -1,0 +1,99 @@
+.clickable {
+	cursor: pointer;
+}
+
+.mostrarTabela{
+	background-color: transparent;
+	border: 0px;
+}
+
+.ajusteTamanhoModalProposta{
+	width: 1000px;
+}
+
+.ajustePadding{
+	padding-left: 0px;
+}
+
+
+#menu-toggle{
+	visibility: hidden;
+}
+
+.logo {
+	width: 100px;
+	margin-top: -6px;
+}
+
+#main-container {
+	min-height: 100%;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+
+footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+}
+
+.form-group {
+	border-bottom: 0 !important;
+}
+
+.tab-verity {
+	background-color: #efefef;
+	border: 1px solid #ccc;
+}
+
+.tab-bar>li a {
+	/*color: #3e3c3c;*/
+	text-shadow: 0 0;
+}
+
+.tab-bar>li.active a {
+	/*color: #000;*/
+}
+
+/*alinhamento do botao dropdown da tela consulta candidatos rh*/
+.btnAlinhado {
+	left: -125px !important;
+}
+
+/*tira o resize do parecer de cancelamento*/
+#parecerCancelamento{
+	resize: none;
+}
+
+.status {
+	font-size: 12px;
+}
+
+.padding-md {
+    margin-bottom: 40px !important;
+}
+/*botão cadastrar candidato*/
+.btnAjuste {
+	margin-left: 1010px;
+}
+
+#parecer{
+	    resize: none;
+}
