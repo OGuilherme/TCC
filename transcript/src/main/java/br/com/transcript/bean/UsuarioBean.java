@@ -1,15 +1,17 @@
 package br.com.transcript.bean;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class UsuarioBean {
-
 	private Integer id;
 	private String nome;
 	private String usuario;
 	private String email;
 	private String senha;
+	private List<ArquivoBean> arquivos;
 	private Boolean autenticado;
 
 	public Integer getId() {
@@ -58,6 +60,14 @@ public class UsuarioBean {
 
 	public void setAutenticado(Boolean autenticado) {
 		this.autenticado = autenticado;
+	}
+
+	public List<ArquivoBean> getArquivos() {
+		return arquivos;
+	}
+
+	public void setArquivos(List<ArquivoBean> arquivos) {
+		this.arquivos = arquivos;
 	}
 
 }

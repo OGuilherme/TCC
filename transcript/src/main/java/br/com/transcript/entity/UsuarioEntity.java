@@ -1,10 +1,14 @@
 package br.com.transcript.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.NamedQueries;
@@ -12,11 +16,9 @@ import org.hibernate.annotations.NamedQuery;
 
 @Entity
 @Table(name = "usuario")
-@NamedQueries({
-	@NamedQuery(name = "obterPorEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.email = ?1"),
-	@NamedQuery(name = "obterPorUsuario", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1"),
-	@NamedQuery(name = "obterPorUsuarioEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1 AND u.email = ?2")
-	})
+@NamedQueries({ @NamedQuery(name = "obterPorEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.email = ?1"),
+		@NamedQuery(name = "obterPorUsuario", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1"),
+		@NamedQuery(name = "obterPorUsuarioEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1 AND u.email = ?2")})
 public class UsuarioEntity {
 
 	@Id
@@ -27,14 +29,17 @@ public class UsuarioEntity {
 	@Column(name = "nome")
 	private String nome;
 
-	@Column(name="usuario")
+	@Column(name = "usuario")
 	private String usuario;
-	
+
 	@Column(name = "email")
 	private String email;
-	
-	@Column(name="senha")
+
+	@Column(name = "senha")
 	private String senha;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
+	private List<ArquivoEntity> arquivos;
 
 	public Integer getId() {
 		return id;
@@ -75,4 +80,13 @@ public class UsuarioEntity {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public List<ArquivoEntity> getArquivos() {
+		return arquivos;
+	}
+
+	public void setArquivos(List<ArquivoEntity> arquivos) {
+		this.arquivos = arquivos;
+	}
+
 }

@@ -2,9 +2,7 @@ package br.com.transcript.converter;
 
 import org.springframework.stereotype.Component;
 
-import br.com.transcript.bean.ArquivoBean;
 import br.com.transcript.bean.PermissoesBean;
-import br.com.transcript.entity.ArquivoEntity;
 import br.com.transcript.entity.PermissoesEntity;
 
 @Component

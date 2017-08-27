@@ -1,7 +1,5 @@
 package br.com.transcript.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,12 +7,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 @Entity
 @Table(name = "Permissoes")
+@NamedQueries({
+	@NamedQuery(name = "obterPermitidos", query = "SELECT p FROM PermissoesEntity p WHERE p.idArquivo.id = ?1"),
+	@NamedQuery(name = "obterPermitido", query = "SELECT p FROM PermissoesEntity p WHERE p.idArquivo.id = ?1 AND p.idPermitido.id = ?2"),
+	@NamedQuery(name = "obterArquivoPermitido", query = "SELECT p FROM PermissoesEntity p WHERE p.idPermissao.id = ?1 AND p.idPermitido.id = ?2"),
+	@NamedQuery(name = "obterPermissao", query = "SELECT p FROM PermissoesEntity p WHERE p.idPermissao.id = ?1")
+})
 public class PermissoesEntity {
 
 	@Id
@@ -26,11 +32,11 @@ public class PermissoesEntity {
 	@JoinColumn(name = "idPermissao")
 	private UsuarioEntity idPermissao;
 
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idPermitido")
-	private List<UsuarioEntity> idPermitido;
+	private UsuarioEntity idPermitido;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idArquivo")
 	private ArquivoEntity idArquivo;
 
@@ -50,11 +56,11 @@ public class PermissoesEntity {
 		this.idPermissao = idPermissao;
 	}
 
-	public List<UsuarioEntity> getIdPermitido() {
+	public UsuarioEntity getIdPermitido() {
 		return idPermitido;
 	}
 
-	public void setIdPermitido(List<UsuarioEntity> idPermitido) {
+	public void setIdPermitido(UsuarioEntity idPermitido) {
 		this.idPermitido = idPermitido;
 	}
 

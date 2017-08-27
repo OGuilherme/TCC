@@ -81,4 +81,8 @@
 		<!-- setting maximum upload size: 500 megabytes -->
 		<beans:property name="maxUploadSize" value="524288000" />
 	</beans:bean>
+	
+	<mvc:interceptors>
+		<bean class="br.com.transcript.interceptor.AutorizadorInterceptor" />
+	</mvc:interceptors>
 </beans>

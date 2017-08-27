@@ -19,20 +19,25 @@
                     </div>
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
-                        <form class="form-border">
+                    	<c:if test="${not empty log}">
+        					<div class="alert alert-warning text-center">${log}</div>
+						</c:if>
+                        <form class="form-border" action="/arquivo/confirmarAutorizacao" method="post">
                                 <div class="col-md-6">
-                                    <label for="cargo">Arquivo</label>
-                                    <select id="cargo" class="form-control">
-                                        <option value="0">Selecionar</option>
-                                        <option value="1">Shablau</option>
-                                    </select>
+                                	<input type="hidden" name="id" value="${arquivo.id }">
+                                	<input type="hidden" name="nome" value="${arquivo.nome }">
+                                	<input type="hidden" name="idUsuario" value="${usuarioLogado.id }">
+                                    <label>Arquivo</label>
+                                    <input type="text" class="form-control" value="${arquivo.nome}" disabled>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Usuário</label>
-                                    <input type="text" class="form-control" data-required="true">
+                                    <input type="text" class="form-control" required="required"
+                                    name="usuario" data-required="true" maxlength="20">
                                 </div><!-- /form-group -->
-                              <div class="col-md-12 row">
-                                <button class="btn btn-md btn-success" type="button"> Salvar</button>
+                              <div class="pull-right col-md-1 form-group">
+                              	<br><br>
+                                <button class="btn btn-md btn-success" type="submit"> Salvar</button>
                               </div>
                         </form>
                     </div><!--</panel body>-->

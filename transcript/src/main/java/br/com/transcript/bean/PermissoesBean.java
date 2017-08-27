@@ -8,7 +8,7 @@ public class PermissoesBean {
 	private Integer id;
 	private UsuarioBean idPermissao;
 	private UsuarioBean idPermitido;
-	private UsuarioBean idArquivo;
+	private ArquivoBean idArquivo;
 
 	public Integer getId() {
 		return id;
@@ -34,11 +34,11 @@ public class PermissoesBean {
 		this.idPermitido = idPermitido;
 	}
 
-	public UsuarioBean getIdArquivo() {
+	public ArquivoBean getIdArquivo() {
 		return idArquivo;
 	}
 
-	public void setIdArquivo(UsuarioBean idArquivo) {
+	public void setIdArquivo(ArquivoBean idArquivo) {
 		this.idArquivo = idArquivo;
 	}
 

@@ -35,19 +35,19 @@
 </head>
 <body class="overflow-hidden">
 <body>
-                <!-- Overlay Div -->
-        <div id="overlay" class="transparent"></div>
-        <div id="wrapper" class="preload">
+    <!-- Overlay Div -->
+    <div id="overlay" class="transparent"></div>
+	<div id="wrapper" class="preload">
         <div id="top-nav" class="skin-6 fixed">
-                <div class="brand">
-                    <a href="dashboard.html"><img src="img/logo.png" class="logo"></a>
-                </div><!-- /brand -->
-                <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div><!-- /top-nav-->
+          	<div class="brand">
+                <a href="dashboard.html"><img src="img/logo.png" class="logo"></a>
+            </div><!-- /brand -->
+            <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div><!-- /top-nav-->
         <aside class="fixed skin-6">
 			<div class="sidebar-inner scrollable-sidebar">
 				<div class="user-block clearfix">
@@ -79,7 +79,8 @@
 								<span class="menu-hover"></span>
 							</a>
                             <ul class="submenu">
-								<li><a href="/arquivo/meus-arquivos"><span class="submenu-label">Consultar meus arquivos</span></a></li>
+								<li>
+									<a href="/arquivo/meus-arquivos/${usuarioLogado.id}"><span class="submenu-label">Consultar meus arquivos</span></a></li>
                                 <li><a href="/arquivo/enviar"><span class="submenu-label">Enviar novo arquivo</span></a></li>
 							</ul>
 						</li>
@@ -122,7 +123,7 @@
 		</aside>
 		<!-- conteúdo da página será carregado aqui -->
 	    <layout:block name="contents">
-	        
+	    
 	    </layout:block>
 	</div>
 	<!-- /wrapper -->
@@ -132,10 +133,9 @@
 		<div class="padding-md">
 			<h4 class="m-top-none">Deseja realmente sair?</h4>
 		</div>
-	
 		<div class="text-center">
-			<a class="btn btn-success m-right-sm" href="/login/logout">Sair</a> <a
-				class="btn btn-danger logoutConfirm_close">Cancelar</a>
+			<a class="btn btn-success m-right-sm" href="/login/logout">Sair</a> 
+			<a class="btn btn-danger logoutConfirm_close">Cancelar</a>
 		</div>
 	</div>
 	

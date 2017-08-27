@@ -14,7 +14,6 @@ public class UsuarioConverter implements Converter<UsuarioEntity, UsuarioBean> {
 		if (bean == null) {
 			return null;
 		}
-
 		UsuarioEntity entity = new UsuarioEntity();
 
 		entity.setId(bean.getId());
@@ -32,7 +31,6 @@ public class UsuarioConverter implements Converter<UsuarioEntity, UsuarioBean> {
 		if (entity == null) {
 			return null;
 		}
-
 		UsuarioBean bean = new UsuarioBean();
 
 		bean.setId(entity.getId());

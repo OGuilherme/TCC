@@ -19,15 +19,18 @@
                     </div>
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
+                    	<c:if test="${not empty log}">
+							<div class="alert alert-warning">${log}</div>
+						</c:if>
                         <form class="form-busca" action="busca/realizarBusca" method="post">
                         	<div id="textDiv"></div>
                             <div class="col-md-6">
                                 <label class="control-label">Usuário</label>
-                                <input class="form-control" type="text" id="user" name="usuario">
+                                <input class="form-control" type="text" id="user" required="required" name="usuario" maxlength="20">
                             </div>
                             <div class="col-md-6">
                                 <label class="control-label">E-mail do usuário</label>
-                                <input class="form-control" type="text" id="email" name="email">
+                                <input class="form-control" type="email" id="email" required="required" name="email" maxlength="50">
                             </div>
                             <div class="col-md-12">
                             	<br>

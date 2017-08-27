@@ -1,21 +1,12 @@
-var id = $("#idUsuario").val();
 var nome = $("#nome").val();
 var usuario = $("#usuario").val();
-var senha = $("#senha").val();
 
 function excluirConta(){
-	$.ajax({
-		url: "/configuracao/excluirConta",
-		type: "POST",
-		dataType: "JSON",
-		data: {'id' : id},
-		success:
-			window.location.href = "/login"
-	});
+	$("#excluir").submit();
 }
 
 function salvarConta(){
-	if (usuario != "" || nome != "" || senha != ""){
+	if (usuario == "" || nome == ""){
 		var div = document.getElementById("textDiv").className = "alert alert-danger text-center";
 
 		textDiv.textContent = "Preencha todos os campos.";
@@ -23,4 +14,6 @@ function salvarConta(){
 		var text = "[" + div.textContent + "]";
 		return false;
 	}
+	$("#atualizar").submit();
+	return true;
 }

@@ -20,18 +20,19 @@
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
                         <form class="form-border"  action="salvar" method="post" enctype="multipart/form-data">
+                        <input type="hidden" value="${usuarioLogado.id}" name="usuario.id">
                         	<div id="textdiv"></div>
                         	<c:if test="${not empty sucesso}">
         						<div class="alert alert-success text-center">${sucesso}</div>
 							</c:if>
                             <div class="col-xs-6"> 
                                 <label class="control-label">Nome do arquivo</label>
-                                <input class="form-control" type="text" id="nome" name="nome">
+                                <input class="form-control" required="required" type="text" id="nome" name="nome" maxlength="30">
                             </div>
                             <div class="col-md-6">
                                 <label class="control-label">Arquivo</label>
                                 <div class="upload-file">
-                                    <input type="file" id="upload-arquivo" class="upload-demo" name="file">
+                                    <input type="file" id="upload-arquivo" required="required" class="upload-demo" name="file">
                                     <label data-title="Selecione" for="upload-arquivo" id="arquivo">
                                         <span data-title="Nenhum arquivo selecionado..."></span>
                                     </label>

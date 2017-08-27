@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="panel-body">
-					<form class="form-login" action="login/autenticar" method="post">
+					<form class="form-login" action="/login/autenticar" method="post">
 						<c:if test="${not empty log}">
 							<div class="alert alert-danger">${log}</div>
 						</c:if>
@@ -58,14 +58,16 @@
 							<label>E-mail</label>
 							<div class="input-group">
                                 <span class="input-group-addon">@</span>
-                                <input name="email" type="text" placeholder="exemplo@transcrip.com.br" class="form-control input-sm">
+                                <input name="email" type="email" required="required"
+                                placeholder="exemplo@transcrip.com.br" class="form-control input-sm">
                             </div>
 						</div>
 						<div class="form-group bounceIn animation-delay4">
                             <label>Senha</label>
 							<div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input name="senha" type="password" placeholder="Senha" class="form-control input-sm">
+                                <input name="senha" required="required" type="password" 
+                                placeholder="Senha" class="form-control input-sm">
                             </div>
 						</div>
 						<div class="seperator"></div>
@@ -104,40 +106,45 @@
                                 <label>Usuário</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input name="usuario" id="user" type="text" placeholder="Usuário" class="form-control input-sm" >
+                                    <input name="usuario" id="user" type="text" required="required" 
+                                    placeholder="Usuário" class="form-control input-sm" minlength="4" maxlength="18" >
                                 </div>
                             </div><!-- /form-group -->
                             <div class="form-group bounceIn animation-delay3">
                                 <label>Nome</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input name="nome" id="nome" type="text" placeholder="Nome" class="form-control input-sm" >
+                                    <input name="nome" id="nome" type="text" placeholder="Nome" 
+                                    required="required" class="form-control input-sm" minlength="4" maxlength="20">
                                 </div>
                             </div><!-- /form-group -->
                             <div class="form-group bounceIn animation-delay4">
                                 <label>E-mail</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">@</span>
-                                    <input name="email" id="email" type="text" placeholder="exemplo@transcrip.com.br" class="form-control input-sm">
+                                    <input name="email" id="email" type="email" required="required"
+                                    placeholder="exemplo@transcrip.com.br" class="form-control input-sm">
                                 </div>
                             </div><!-- /form-group -->
                             <div class="form-group bounceIn animation-delay5">
                                 <label>Senha</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                    <input name="senha" id="senha" type="password" placeholder="Senha" class="form-control input-sm">
+                                    <input name="senha" id="senha" type="password" required="required"
+                                    placeholder="Senha" class="form-control input-sm" minlength="4" maxlength="12">
                                 </div>
                             </div><!-- /form-group -->
                             <div class="form-group bounceIn animation-delay6">
                                 <label>Confirmação de senha</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                    <input id="confirmarSenha" type="password" placeholder="Confirmação de senha" class="form-control input-sm">
+                                    <input id="confirmarSenha" type="password" required="required"
+                                    placeholder="Confirmação de senha" class="form-control input-sm" minlength="4" maxlength="12">
                                 </div>
                             </div><!-- /form-group -->
                             <div class="form-group bounceIn animation-delay7">
                                 <label class="label-checkbox">
-                                     <input type="checkbox"/>
+                                     <input type="checkbox" required="required">
                                      <span class="custom-checkbox info"></span>
                                      Eu aceito os termos de uso.
                                 </label>
@@ -175,26 +182,20 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="panel-body">
-                        <form class="form-login bounceIn animation-delay2">
-                            <div class="form-group">
-                                <label>Usuário</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input type="text" placeholder="Usuário" class="form-control input-sm" >
-                                </div>
-                            </div><!-- /form-group -->
-                            <div class="form-group bounceIn animation-delay3">
+                        <form class="form-senha" action="/login/recuperarSenha" method="post">
+                            <div class="form-group bounceIn animation-delay2">
                                 <label>E-mail</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">@</span>
-                                    <input type="text" placeholder="exemplo@transcrip.com.br" class="form-control input-sm">
+                                    <input type="email" required="required" 
+                                    placeholder="exemplo@transcrip.com.br" name="email" class="form-control input-sm">
                                 </div>
                             </div><!-- /form-group -->
                             <div class="seperator"></div>
                             <hr/>
-                            <div class="form-group bounceIn animation-delay4">
+                            <div class="form-group bounceIn animation-delay3">
                                 <div class="controls text-right">
-                                    <a class="btn btn-warning btn-sm" href="#recuperar" data-toggle="modal"><i class="fa fa-key"></i> Recuperar</a>
+                                	<button class="btn btn-success btn-sm pull-right" type="submit" ><i class="fa fa-key"></i>  Recuperar</button>
                                 </div>
                             </div><!-- /form-group -->
                         </form>

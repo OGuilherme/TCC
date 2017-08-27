@@ -2,8 +2,6 @@ package br.com.transcript.bean;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-
 import org.springframework.stereotype.Component;
 
 @Component

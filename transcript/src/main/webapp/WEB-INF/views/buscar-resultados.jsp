@@ -32,7 +32,7 @@
                                 <td>${usuarios.usuario}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-md btn-info" ><span href="/meus-arquivos/${usuarios.id}"> Ver arquivos</span></button>
+                                        <a href="/arquivo/consultar/${usuarios.id}"><button class="btn btn-md btn-info" > Ver arquivos</button></a>
                                     </div><!-- /btn-group -->
                                 </td>
                             </tr>
@@ -40,19 +40,6 @@
                         </tbody>
                     </table>
                 </div><!--</panel default>-->
-                <div class="panel-footer clearfix">
-                    <div class="row">
-                        <ul class="pagination pagination-xs m-top-none pull-right">
-                            <li class="disabled"><a href="#">Anterior</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">Próximo</a></li>
-                        </ul>
-                    </div><!--</div row>-->
-                </div><!--</panel footer>-->
             </div><!--</container>-->
         </div><!--</main container>-->
         <!--corpo -->

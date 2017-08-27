@@ -19,31 +19,41 @@
                     </div>
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
-                        <form class="form-border" action="configuracao/atualizarConta" method="post">
-                        <div id="textDiv"></div>
+                       <form id="atualizar" class="form-border" action="configuracao/atualizarConta" method="post">
+	                        <input type="hidden" value="${usuarioLogado.id }" name="id">
+	                        <div id="textDiv"></div>
+	                        <c:if test="${not empty log1}">
+	        					<div class="alert alert-success text-center">${log1}</div>
+							</c:if>
 							<div class="col-xs-6">
 							    <label class="control-label">Nome do usuário</label>
-							    <input class="form-control" type="text" id="nome" name="nome">
+							    <input class="form-control" type="text" id="nome" name="nome" value="${usuarioLogado.nome }">
+							    <input type="hidden" id="idUsuario" value="${usuarioLogado.id }" required="required" name="id" maxlength="20">
 							</div>
 							<div class="col-xs-6">
 							    <label class="control-label">Usuário</label>
-							    <input class="form-control" type="text" id="usuario" name="usuario">
+							    <input class="form-control" type="text" id="usuario" name="usuario" maxlength="18"
+							    required="required" value="${usuarioLogado.usuario }">
 							</div>
 							<div class="col-xs-6">
+							<br>
 							    <label class="control-label">E-mail</label>
-							    <input class="form-control" disabled type="text" value="">
+							    <input class="form-control" disabled type="email" value="${usuarioLogado.email }" maxlength="50">
 							</div>
 							<div class="col-xs-6">
+							<br>
 							    <label class="control-label">Senha</label>
-							    <input class="form-control" type="text" id="senha" name="senha">
+							    <input class="form-control" type="password" id="senha" name="senha" maxlength="12">
 							</div>
-							<div class="pull-right">
-                                <br>
-                                <input type="hidden" id="idUsuario" value="1" name="id">
-                                <button class="btn btn-md btn-success" type="submit" onClick="return salvarConta();"> Salvar</button>
-                                <button class="btn btn-md btn-danger" type="button" onClick="excluirConta();"> Excluir conta</button>
-                              </div>
                         </form>
+                        <form id="excluir" class="form-border" action="configuracao/excluirConta" method="post">
+                       			<input type="hidden" id="idUsuario" value="${usuarioLogado.id }" name="id">
+                        </form>
+                        <div class="pull-right">
+	                        <br>
+	                        <button class="btn btn-md btn-success" type="button" onClick="salvarConta();"> Salvar</button>
+	                        <button class="btn btn-md btn-danger" type="button" onClick="excluirConta();"> Excluir conta</button>
+                    	</div>
                     </div><!--</panel body>-->
                 </div>
             </div><!--</container>-->

@@ -1,5 +1,7 @@
 package br.com.transcript.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,4 +60,15 @@ public class LoginController {
 		return "redirect:/login";
 	}
 
+	@RequestMapping(value="/recuperarSenha", method = RequestMethod.POST)
+	public String recuperarSenha(UsuarioBean usuarioBean, RedirectAttributes redirectAttrs){
+		List<UsuarioBean> usuarios = usuarioBusiness.consultarUsuarios(usuarioBean);
+		if(usuarios != null && usuarios.size() > 0){
+			usuarioBusiness.recuperarSenha(usuarios.get(0));
+			redirectAttrs.addFlashAttribute("log1", "Nova senha encaminha para o e-mail: "+usuarioBean.getEmail());
+		}else{
+			redirectAttrs.addFlashAttribute("log2", "E-mail: "+usuarioBean.getEmail() +" não localizado");
+		}
+		return "redirect:/login";
+	}
 }
