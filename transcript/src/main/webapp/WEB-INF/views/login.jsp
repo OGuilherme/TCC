@@ -6,24 +6,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Bootstrap core CSS -->
+    <title>TransCxript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="manifest" href='<c:url value="/resources/json/manifest.json"/>'>
 	<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- Font Awesome -->
 	<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-	
-	<!-- Pace -->
 	<link href="/resources/css/pace.css" rel="stylesheet">
-	
-	<!-- Perfect -->
 	<link href="/resources/css/app.css" rel="stylesheet">
 	<link href="/resources/css/app-skin.css" rel="stylesheet">
-
   </head>
   <body>
 	<div class="login-wrapper">
@@ -74,7 +65,6 @@
 						<div class="form-group bounceIn animation-delay5">
                             <a href="#recuperar-senha-modal" data-toggle="modal">Esqueceu sua senha?</a>
 						</div>
-
 						<hr/>
 						<button class="btn btn-success btn-sm pull-right bounceIn animation-delay6" type="submit">
 							<i class="fa fa-sign-in"></i> Entrar
@@ -84,15 +74,9 @@
 			</div><!-- /panel -->
 		</div><!-- /login-widget -->
 	</div><!-- /login-wrapper -->
-	
 	<!-- Modal inscrever-se -->
     <div class="modal fade" id="novo-usuario-modal" data-target="#novo-usuario-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="login-wrapper">
-            <div class="text-center">
-                <h2 class="fadeInUp animation-delay8" style="font-weight:bold">
-                    <span style="color:#000">TransCrip</span>
-                </h2>
-            </div>
             <div class="login-widget animation-delay1">	
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -100,7 +84,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="panel-body">
-                        <form class="form-login" action="login/registrar" method="post" onsubmit="return validarSenha()">
+                        <form class="form-login" action="/login/registrar" method="post" onsubmit="return validarSenha()">
                         	<div id="textDiv"></div>
                             <div class="form-group bounceIn animation-delay">
                                 <label>Usuário</label>
@@ -142,13 +126,6 @@
                                     placeholder="Confirmação de senha" class="form-control input-sm" minlength="4" maxlength="12">
                                 </div>
                             </div><!-- /form-group -->
-                            <div class="form-group bounceIn animation-delay7">
-                                <label class="label-checkbox">
-                                     <input type="checkbox" required="required">
-                                     <span class="custom-checkbox info"></span>
-                                     Eu aceito os termos de uso.
-                                </label>
-                            </div><!-- /form-group -->
 
                             <div class="seperator"></div>
                             <hr/>
@@ -166,15 +143,9 @@
         </div><!-- /login-wrapper -->
     </div>
     <!-- Modal -->
-      
     <!-- Modal esqueceu a senha -->
     <div class="modal fade" id="recuperar-senha-modal" data-target="#recuperar-senha-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="login-wrapper">
-            <div class="text-center">
-                <h2 class="fadeInUp animation-delay5" style="font-weight:bold">
-                    <span style="color:#000">TransCrip</span>
-                </h2>
-            </div>
             <div class="login-widget animation-delay1">	
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -204,46 +175,19 @@
             </div><!-- /login-widget -->
         </div><!-- /login-wrapper -->
     </div>
-    <!-- Modal esqueceu a senha -->
-    <!-- Modal inscrito com sucesso -->
-    <!-- Modal -->
-    <!-- Modal inscrito com sucesso -->
     <div class="modal fade" id="recuperar" data-target="#recuperar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="alert alert-success text-center">
            <strong>Senha enviada para o seu e-mail com sucesso!</strong>
         </div>
     </div>
-    <!-- Modal -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <!-- Jquery -->
 	<script src="/resources/js/jquery-1.10.2.min.js"></script>
-    
-    <!-- Bootstrap -->
     <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-   
-	<!-- Modernizr -->
 	<script src='/resources/js/modernizr.min.js'></script>
-   
-    <!-- Pace -->
 	<script src='/resources/js/pace.min.js'></script>
-   
-	<!-- Popup Overlay -->
 	<script src='/resources/js/jquery.popupoverlay.min.js'></script>
-   
-    <!-- Slimscroll -->
 	<script src='/resources/js/jquery.slimscroll.min.js'></script>
-   
-	<!-- Cookie -->
 	<script src='/resources/js/jquery.cookie.min.js'></script>
-
-	<!-- Perfect -->
 	<script src="/resources/js/app/app.js"></script>
-	
-	<!-- javaScript aqui -->
 	<script src="/resources/js/custom/login.js"></script>
   </body>
 </html>

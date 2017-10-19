@@ -7,28 +7,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!-- <link rel="shortcut icon" type="image/ico" href="/resources/img/prosperity.ico"/> -->
-	
-	<!-- Bootstrap core CSS -->
 	<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- Font Awesome -->
 	<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-	
-	<!-- Pace -->
 	<link href="/resources/css/pace.css" rel="stylesheet">
-	
-	<!-- Morris -->
 	<link href="/resources/css/morris.css" rel="stylesheet"/>	
-	
-	<!-- Perfect -->
 	<link href="/resources/css/app.css" rel="stylesheet">
 	<link href="/resources/css/app-skin.css" rel="stylesheet">
-	
 	<link href="/resources/css/custom.css" rel="stylesheet">
-	
 	<layout:block name="title">
 		<title>Transcript</title>
 	</layout:block>
@@ -57,17 +42,6 @@
 				</div><!-- /user-block -->
 				<div class="main-menu">
 					<ul>
-						<li>
-							<a href="/pagina-inicial">
-								<span class="menu-icon">
-									<i class="fa  fa-home fa-lg"></i>
-								</span>
-								<span class="text">
-									Página inicial
-								</span>
-								<span class="menu-hover"></span>
-							</a>
-                        </li>
 						<li class="openable">
 							<a href="#">
 								<span class="menu-icon">
@@ -123,11 +97,9 @@
 		</aside>
 		<!-- conteúdo da página será carregado aqui -->
 	    <layout:block name="contents">
-	    
 	    </layout:block>
 	</div>
 	<!-- /wrapper -->
-	
 	<!-- Logout confirmation -->
 	<div class="custom-popup width-100" id="logoutConfirm">
 		<div class="padding-md">
@@ -138,89 +110,32 @@
 			<a class="btn btn-danger logoutConfirm_close">Cancelar</a>
 		</div>
 	</div>
-	
-	
-	<!-- Le javascript ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	
-	<!-- Jquery -->
 	<script src="/resources/js/jquery-1.10.2.min.js"></script>
 	<script src="/resources/js/jquery.dataTables.min.js"></script>
-	
-	<!-- Bootstrap -->
 	<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/resources/js/dataTables.bootstrap.min.js"></script>
-	
-	<!-- Chosen -->
 	<script src='/resources/js/chosen.jquery.min.js'></script>
-	
-	<!-- Mask-input -->	
 	<script src='/resources/js/jquery.mask.min.js'></script>
-	
-	<!-- Datepicker -->
 	<script src='/resources/js/bootstrap-datepicker.min.js'></script>
-	
-	<!-- Timepicker -->
 	<script src='/resources/js/bootstrap-timepicker.min.js'></script>
-	
-	<!-- Slider -->
 	<script src='/resources/js/bootstrap-slider.min.js'></script>
-	
-	<!-- Flot -->
-	<!-- <script src='/resources/js/jquery.flot.min.js'></script> -->
-	
-	<!-- Morris -->
-	<!-- <script src='/resources/js/rapheal.min.js'></script>	
 	<script src='/resources/js/morris.min.js'></script>	 -->
-	
-	<!-- Tag input -->
 	<script src='/resources/js/jquery.tagsinput.min.js'></script>
-	
-	<!-- WYSIHTML5 -->
 	<script src='/resources/js/wysihtml5-0.3.0.min.js'></script>
 	<script src='/resources/js/uncompressed/bootstrap-wysihtml5.js'></script>
-	
-	<!-- Dropzone -->
 	<script src='/resources/js/dropzone.min.js'></script>
-	
-	<!-- Modernizr -->
 	<script src='/resources/js/modernizr.min.js'></script>
-	
-	<!-- Pace -->
 	<script src='/resources/js/pace.min.js'></script>
-	
-	<!-- Popup Overlay -->
 	<script src='/resources/js/jquery.popupoverlay.min.js'></script>
-	
-	<!-- Slimscroll -->
 	<script src='/resources/js/jquery.slimscroll.min.js'></script>
-	
-	<!-- Cookie -->
 	<script src='/resources/js/jquery.cookie.min.js'></script>
-	
 	<script src="/resources/js/app/app_form.js"></script>
 	<script src="/resources/js/app/app.js"></script>
-	
-	<!-- menu lateral -->
 	<script src="/resources/js/custom/menu.js"></script>
-
-	<!-- Colorbox -->
 	<script src='/resources/js/jquery.colorbox.min.js'></script>	
-
-	<!-- Sparkline -->
 	<script src='/resources/js/jquery.sparkline.min.js'></script>
-	
-	<!-- Pace -->
 	<script src='/resources/js/uncompressed/pace.js'></script>
-	
-	<!-- Modernizr -->
 	<script src='/resources/js/modernizr.min.js'></script>
-	
-	<!-- Perfect -->
-	<!-- <script src="/resources/js/app/app_dashboard.js"></script> -->
-	
-	<!-- scripts serão carregados aqui -->	
 	<layout:block name="scripts"></layout:block>
-	
 </body>
 </html>

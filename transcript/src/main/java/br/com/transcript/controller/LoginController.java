@@ -16,7 +16,7 @@ import br.com.transcript.business.UsuarioBusiness;
 import br.com.transcript.exception.BusinessException;
 
 @Controller
-@RequestMapping(value = "login")
+@RequestMapping(value = "/login")
 public class LoginController {
 	
 	@Autowired
@@ -37,7 +37,7 @@ public class LoginController {
 			usuario = usuarioBusiness.autenticar(usuarioBean);
 			if(usuario.getAutenticado()){
 				session.setAttribute("usuarioLogado", usuario);
-				return "redirect:/pagina-inicial";
+				return "redirect:/arquivo/meus-arquivos/"+usuario.getId();
 			}
 		} catch (BusinessException ex) {
 			redirectAttrs.addFlashAttribute("log", ex.getMessage());
@@ -49,9 +49,7 @@ public class LoginController {
 	public String registrar(UsuarioBean usuarioBean, RedirectAttributes redirectAttrs){
 		try {
 			usuarioBusiness.registrar(usuarioBean);
-			if (usuarioBean.getId() == null) {
-				redirectAttrs.addFlashAttribute("log1", "Inscrito com sucesso!");
-			}
+			redirectAttrs.addFlashAttribute("log1", "Inscrito com sucesso!");
 			
 		} catch (BusinessException e) {
 			redirectAttrs.addFlashAttribute("log2", e.getMessage());
