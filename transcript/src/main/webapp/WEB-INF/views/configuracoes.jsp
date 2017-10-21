@@ -19,14 +19,14 @@
                     </div>
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
-                       <form id="atualizar" class="form-border" action="configuracao/atualizarConta" method="post">
+                       <form id="atualizar" class="form-border" action='<c:url value="/configuracao/atualizarConta"/>' method="post">
 	                        <input type="hidden" value="${usuarioLogado.id }" name="id">
 	                        <div id="textDiv"></div>
 	                        <c:if test="${not empty log1}">
 	        					<div class="alert alert-success text-center">${log1}</div>
 							</c:if>
 							<div class="col-xs-6">
-							    <label class="control-label">Nome do usuário</label>
+							    <label class="control-label">Nome</label>
 							    <input class="form-control" type="text" id="nome" name="nome" value="${usuarioLogado.nome }">
 							    <input type="hidden" id="idUsuario" value="${usuarioLogado.id }" required="required" name="id" maxlength="20">
 							</div>

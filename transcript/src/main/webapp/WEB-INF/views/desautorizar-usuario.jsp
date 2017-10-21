@@ -22,13 +22,13 @@
                     	<c:if test="${not empty log}">
 							<div class="alert alert-success">${log}</div>
 						</c:if>
-                        <form class="form-border" action="/arquivo/confirmarRemover" method="post">
+                        <form class="form-border" action='<c:url value="/arquivo/confirmarRemover"/>' method="post">
                                 <div class="col-md-6">
 	                                <input type="hidden" name="id" value="${arquivo.id }">
                                 	<input type="hidden" name="nome" value="${arquivo.nome }">
                                 	<input type="hidden" name="idUsuario" value="${usuarioLogado.id }">
                                     <label for="arquivo">Arquivo</label>
-                                    <input type="text" class="form-control" value="${arquivo.nome }">
+                                    <input type="text" class="form-control" value="${arquivo.nome }" disabled/>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Usuário</label>

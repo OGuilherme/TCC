@@ -22,7 +22,7 @@
                     	<c:if test="${not empty log}">
         					<div class="alert alert-warning text-center">${log}</div>
 						</c:if>
-                        <form class="form-border" action="/arquivo/confirmarAutorizacao" method="post">
+                        <form class="form-border" action='<c:url value="/arquivo/confirmarAutorizacao"/>' method="post">
                                 <div class="col-md-6">
                                 	<input type="hidden" name="id" value="${arquivo.id }">
                                 	<input type="hidden" name="nome" value="${arquivo.nome }">

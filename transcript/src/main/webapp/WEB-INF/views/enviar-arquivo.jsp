@@ -19,7 +19,7 @@
                     </div>
                     <!--<form class="form-inline">-->
                     <div class="panel-body">
-                        <form class="form-border"  action="salvar" method="post" enctype="multipart/form-data">
+                        <form class="form-border"  action='<c:url value="/salvar"/>' method="post" enctype="multipart/form-data">
                         <input type="hidden" value="${usuarioLogado.id}" name="usuario.id">
                         	<div id="textdiv"></div>
                         	<c:if test="${not empty sucesso}">

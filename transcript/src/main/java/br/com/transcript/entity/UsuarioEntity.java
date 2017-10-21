@@ -16,9 +16,9 @@ import org.hibernate.annotations.NamedQuery;
 
 @Entity
 @Table(name = "usuario")
-@NamedQueries({ @NamedQuery(name = "obterPorEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.email = ?1"),
-		@NamedQuery(name = "obterPorUsuario", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1"),
-		@NamedQuery(name = "obterPorUsuarioEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario = ?1 AND u.email = ?2")})
+@NamedQueries({ @NamedQuery(name = "obterPorEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.email like ?1"),
+		@NamedQuery(name = "obterPorUsuario", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario like ?1"),
+		@NamedQuery(name = "obterPorUsuarioEmail", query = "SELECT u FROM UsuarioEntity u WHERE u.usuario like ?1 AND u.email like ?2")})
 public class UsuarioEntity {
 
 	@Id

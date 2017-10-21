@@ -22,7 +22,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 
 		if (uri.endsWith("login/") || uri.endsWith("/autenticar") || uri.contains("resources/")
-				|| uri.endsWith("/servico")) {
+				|| uri.endsWith("/servico") || uri.endsWith("/registrar") || uri.endsWith("/recuperarSenha")) {
 			return true;
 		}
 

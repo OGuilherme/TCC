@@ -23,7 +23,7 @@
 							<div class="alert alert-success">${log}</div>
 						</c:if>
                         <div class="row">
-                        	<form class="form-filtro" action="/arquivo/meus-arquivos/filtrar" method="post">
+                        	<form class="form-filtro" action='<c:url value="/arquivo/meus-arquivos/filtrar"/>' method="post">
                         		<input type="hidden" name="idUsuario" value="${usuarioLogado.id}">
 	                            <div class="col-md-5">
 	                                <div class="form-group">

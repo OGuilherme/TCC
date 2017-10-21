@@ -6,7 +6,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>TransCxript</title>
+    <title>TransCript</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="manifest" href='<c:url value="/resources/json/manifest.json"/>'>
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 				<div class="panel-body">
-					<form class="form-login" action="/login/autenticar" method="post">
+					<form class="form-login" action='<c:url value="/login/autenticar"/>' method="post">
 						<c:if test="${not empty log}">
 							<div class="alert alert-danger">${log}</div>
 						</c:if>
@@ -84,7 +84,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="panel-body">
-                        <form class="form-login" action="/login/registrar" method="post" onsubmit="return validarSenha()">
+                        <form class="form-registrar" action='<c:url value="/login/registrar"/>' method="post" onsubmit="return validarSenha()">
                         	<div id="textDiv"></div>
                             <div class="form-group bounceIn animation-delay">
                                 <label>Usuário</label>
@@ -153,7 +153,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="panel-body">
-                        <form class="form-senha" action="/login/recuperarSenha" method="post">
+                        <form class="form-senha" action='<c:url value="/login/recuperarSenha"/>' method="post">
                             <div class="form-group bounceIn animation-delay2">
                                 <label>E-mail</label>
                                 <div class="input-group">

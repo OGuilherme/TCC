@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,33 +41,32 @@ public class LoginController {
 				return "redirect:/arquivo/meus-arquivos/"+usuario.getId();
 			}
 		} catch (BusinessException ex) {
-			redirectAttrs.addFlashAttribute("log", ex.getMessage());
+			redirectAttrs.addAttribute("log2", ex.getMessage());
 		}
 		return "redirect:/login";
 	}
 	
 	@RequestMapping(value="/registrar", method = RequestMethod.POST)
-	public String registrar(UsuarioBean usuarioBean, RedirectAttributes redirectAttrs){
+	public String registrar(UsuarioBean usuarioBean, Model redirectAttrs){
 		try {
 			usuarioBusiness.registrar(usuarioBean);
-			redirectAttrs.addFlashAttribute("log1", "Inscrito com sucesso!");
-			
+			redirectAttrs.addAttribute("log1", "Inscrito com sucesso!");
 		} catch (BusinessException e) {
-			redirectAttrs.addFlashAttribute("log2", e.getMessage());
+			redirectAttrs.addAttribute("log2", e.getMessage());
 		}
 		
-		return "redirect:/login";
+		return "/login";
 	}
 
 	@RequestMapping(value="/recuperarSenha", method = RequestMethod.POST)
-	public String recuperarSenha(UsuarioBean usuarioBean, RedirectAttributes redirectAttrs){
+	public String recuperarSenha(UsuarioBean usuarioBean, Model redirectAttrs){
 		List<UsuarioBean> usuarios = usuarioBusiness.consultarUsuarios(usuarioBean);
 		if(usuarios != null && usuarios.size() > 0){
 			usuarioBusiness.recuperarSenha(usuarios.get(0));
-			redirectAttrs.addFlashAttribute("log1", "Nova senha encaminha para o e-mail: "+usuarioBean.getEmail());
+			redirectAttrs.addAttribute("log1", "Nova senha encaminha para o e-mail: "+usuarioBean.getEmail());
 		}else{
-			redirectAttrs.addFlashAttribute("log2", "E-mail: "+usuarioBean.getEmail() +" não localizado");
+			redirectAttrs.addAttribute("log2", "E-mail: "+usuarioBean.getEmail() +" não localizado");
 		}
-		return "redirect:/login";
+		return "/login";
 	}
 }

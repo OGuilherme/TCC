@@ -22,14 +22,14 @@
                     	<c:if test="${not empty log}">
 							<div class="alert alert-warning">${log}</div>
 						</c:if>
-                        <form class="form-busca" action="busca/realizarBusca" method="post">
+                        <form class="form-busca" action='<c:url value="/busca/realizarBusca"/>' method="post">
                         	<div id="textDiv"></div>
                             <div class="col-md-6">
                                 <label class="control-label">Usuário</label>
                                 <input class="form-control" type="text" id="user" name="usuario" maxlength="20">
                             </div>
                             <div class="col-md-6">
-                                <label class="control-label">E-mail do usuário</label>
+                                <label class="control-label">E-mail</label>
                                 <input class="form-control" type="email" id="email" name="email" maxlength="50">
                             </div>
                             <div class="col-md-12">
