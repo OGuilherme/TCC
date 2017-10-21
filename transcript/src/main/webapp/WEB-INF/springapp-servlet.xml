@@ -27,12 +27,12 @@
 	<!-- MVC -->
 	<mvc:annotation-driven />
 
-	<context:component-scan base-package="br.com.transcript.business" />
-	<context:component-scan base-package="br.com.transcript.bean" />
-	<context:component-scan base-package="br.com.transcript.controller" />
-	<context:component-scan base-package="br.com.transcript.converter" />
-	<context:component-scan base-package="br.com.transcript.dao" />
-	<context:component-scan base-package="br.com.transcript.entity" />
+	<context:component-scan base-package="br.com.transcrip.business" />
+	<context:component-scan base-package="br.com.transcrip.bean" />
+	<context:component-scan base-package="br.com.transcrip.controller" />
+	<context:component-scan base-package="br.com.transcrip.converter" />
+	<context:component-scan base-package="br.com.transcrip.dao" />
+	<context:component-scan base-package="br.com.transcrip.entity" />
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
@@ -52,7 +52,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		scope="singleton">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="br.com.transcript.entity" />
+		<property name="packagesToScan" value="br.com.transcrip.entity" />
 		<property name="jpaVendorAdapter">
 			<bean id="hibernateJpaVendorAdapter"
 				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
@@ -71,7 +71,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<property name="url"
-			value="jdbc:sqlserver://localhost\MSSQL2014:1433;instanceName=TransCript;Database=TransCript" />
+			value="jdbc:sqlserver://localhost\MSSQL2014:1433;instanceName=TransCrip;Database=TransCrip" />
 		<property name="username" value="sa" />
 		<property name="password" value="1234" />
 	</bean>
@@ -83,6 +83,6 @@
 	</beans:bean>
 	
 	<mvc:interceptors>
-		<bean class="br.com.transcript.interceptor.AutorizadorInterceptor" />
+		<bean class="br.com.transcrip.interceptor.AutorizadorInterceptor" />
 	</mvc:interceptors>
 </beans>

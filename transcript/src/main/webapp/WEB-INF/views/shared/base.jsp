@@ -15,7 +15,7 @@
 	<link href="/resources/css/app-skin.css" rel="stylesheet">
 	<link href="/resources/css/custom.css" rel="stylesheet">
 	<layout:block name="title">
-		<title>Transcript</title>
+		<title>Transcrip</title>
 	</layout:block>
 </head>
 <body class="overflow-hidden">
